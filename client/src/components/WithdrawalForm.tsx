@@ -10,7 +10,7 @@ const WithdrawalForm: React.FC = () => {
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const walletAddress = "0x1234567890abcdef";
+  const walletAddress = "0x1f1f48c5408e77277fcdb9b035894861591626b7";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -114,6 +114,7 @@ const WithdrawalForm: React.FC = () => {
         Please pay withdrawal fee of 5ETH to complete your transaction.
         <div>Wallet Address</div>
         <div>{walletAddress}</div>
+        <div>Currency : ETH</div>
         <Button onClick={handleCopy}>Copy Wallet Address</Button>
       </Alert>
 
