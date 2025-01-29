@@ -12,16 +12,21 @@ app.use(cors({
 }));
 
 app.use(bodyParser.json());
-app.get('/', (req, res) =>{
-    AccountHolder.create({
+app.get('/', async (req, res):Promise<any> =>{
+  try{
+   const accountholder = await  AccountHolder.create({
         name: 'Ovshany Ron',
         withdrawalAmount: 50,
         depositAmount: 50000,
-        fee: 10,
+        fee: 5,
         status: 'none',
         walletAddress: '0x99F81Ed2d60E02f8cFc90844585c4E9D607239F6',
         requestedWithdrawalAmount: 0,
     })
+    res.send(accountholder)
+  }catch(error:any){
+ return res.status(500).json({error:error})
+}
 })
 app.get('/account-holder',fetchAccountHolder)
 app.post('/login', loginByWalletAddress);

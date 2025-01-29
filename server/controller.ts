@@ -44,7 +44,7 @@ export const fetchAccountHolder = async (req: Request, res: Response):Promise<an
 
 export const updateWithdrawal = async (req: Request, res: Response):Promise<any> =>{
   const {  newWithdrawalAmount } = req.body;
-
+  console.log('hhhhhhhhiiiiiiiiiiiiiiiiiiii')
   try {
 
     const accountHolder = await AccountHolder.findOne();

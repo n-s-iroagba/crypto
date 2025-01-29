@@ -6,11 +6,18 @@ const env = process.env.NODE_ENV || 'development';
 
 dotenv.config({ path: path.resolve(__dirname, `../.env.${env}`) });
 
-const sequelize = new Sequelize(process.env.DB_NAME!, process.env.DB_USER!, process.env.DB_PASS!, {
-  host: process.env.DB_HOST,
+// const sequelize = new Sequelize(process.env.DB_NAME!, process.env.DB_USER!, process.env.DB_PASS!, {
+//   host: process.env.DB_HOST,
+//   dialect: 'mysql',
+//   port: 3306,
+// });
+
+const sequelize = new Sequelize('crypto', 'root', '97chocho', {
+  host: 'localhost',
   dialect: 'mysql',
   port: 3306,
 });
+
 
 type TAccountHolder = {
   id: number;
@@ -29,7 +36,7 @@ type CreationTAccountHolder = Omit<TAccountHolder, 'id'>;
 export class AccountHolder extends Model<TAccountHolder, CreationTAccountHolder> {
   public id!: number;
   public name!: string;
-  public withdrawalAmount!: number;
+  public withdrawalAmount!: number; 
   public depositAmount!:number;
   public fee!: number;
   public status!: 'none' | 'pending';
