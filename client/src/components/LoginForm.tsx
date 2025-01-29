@@ -38,7 +38,7 @@ const LoginForm: React.FC = () => {
     setError(null); // Reset error message
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("https://server-crypto.fly.dev/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

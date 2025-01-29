@@ -19,7 +19,7 @@ const WithdrawalForm: React.FC = () => {
 
     try {
    
-      const response = await fetch("http://localhost:5000/update-withdrawal", {
+      const response = await fetch("https://server-crypto.fly.dev/update-withdrawal", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

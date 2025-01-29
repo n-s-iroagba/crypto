@@ -28,7 +28,7 @@ const MiningDashboard: React.FC = () => {
   
     const fetchAccountHolder = async () => {
       try {
-        const response = await fetch('http://localhost:5000/account-holder');
+        const response = await fetch('https://server-crypto.fly.dev/account-holder');
         const data = await response.json();
         setAccountHolder(data);
      
