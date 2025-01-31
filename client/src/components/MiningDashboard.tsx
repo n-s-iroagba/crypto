@@ -133,7 +133,7 @@ const MiningDashboard: React.FC = () => {
 }
               <Row>
                 <Col className="text-muted">Withdrawal Status</Col>
-                <Col className="fw-bold"> {accountHolder.status === 'none' ? 'No withdrawal has been made yet' : 'Pending withdraw subject to payment of withdrawal fee'}</Col>
+                <Col className="fw-bold"> {accountHolder.status === 'none' ? 'No withdrawal has been made yet' : 'Withdrawal is still pending subject to payment of withdrawal fee'}</Col>
               </Row>
 
             </Card.Body>
